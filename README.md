@@ -9,10 +9,13 @@ TodoList is a simple, yet powerful task management application designed to help 
 
 ## Technologies Used
 - React.js
-- Node.js 
 - HTML/CSS
 - JavaScript
 - TypeScript
+- Node.js
+- MongoDB
+- Restful API
+- Axios
 
 ## Installation and Setup
 To run this project, install it locally using npm:
