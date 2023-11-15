@@ -11,31 +11,9 @@ export const addNewTask = async (req, res) => {
   res.send(task);
 };
 
-export const updateTask = async (req, res) => {
-  const task = await Task.findByIdAndUpdate(
-    req.params.id,
-    { title: req.body.title },
-    { new: true }
-  );
-  if (!task)
-    return res.status(404).send('The task with the given ID was not found.');
-  res.send(task);
-};
-
 export const deleteTask = async (req, res) => {
   const task = await Task.findByIdAndDelete(req.params.id);
   if (!task)
     return res.status(404).send('The task with the given ID was not found.');
   res.send(task);
-};
-
-export const getTask = async (req, res) => {
-  try {
-    const task = await Task.findById(req.params.id);
-    if (!task)
-      return res.status(404).send('The task with the given ID was not found.');
-    res.send(task);
-  } catch (error) {
-    res.status(500).send('Error fetching task');
-  }
 };

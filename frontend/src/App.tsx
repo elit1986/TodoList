@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 import { Todo } from './types/todo-item-props.type.js';
-import { getTasks, addTask, updateTask, deleteTask } from './apis/taskApi.js';
+import { getTasks, addTask, deleteTask } from './apis/taskApi.js';
 
 const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
@@ -26,24 +26,9 @@ const App = () => {
     }
   };
 
-  const handleUpdateTodo = async (id: string, newTitle: string) => {
-    try {
-      const updatedTodo = await updateTask(id, { title: newTitle });
-      if (updatedTodo) {
-        setTodos(
-          todos.map((todo) =>
-            todo.id === id ? { ...todo, title: newTitle } : todo
-          )
-        );
-      }
-    } catch (error) {
-      console.error('Error updating todo:', error);
-    }
-  };
-
   const handleDeleteTodo = async (id: string) => {
     await deleteTask(id);
-    setTodos(todos.filter((todo) => todo.id !== id));
+    setTodos(todos.filter((todo) => todo._id !== id));
   };
 
   return (
@@ -53,11 +38,7 @@ const App = () => {
       </div>
 
       <AddTodo onAdd={handleAddTodo} />
-      <TodoList
-        todos={todos}
-        onUpdate={handleUpdateTodo}
-        onDelete={handleDeleteTodo}
-      />
+      <TodoList todos={todos} onDelete={handleDeleteTodo} />
     </div>
   );
 };

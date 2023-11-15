@@ -1,15 +1,11 @@
 import React from 'react';
 import { TodoItemProps } from '../types/todo-item-props.type.js';
 
-const TodoItem: React.FC<TodoItemProps> = ({ todo, onSelect }) => {
+const TodoItem: React.FC<TodoItemProps> = ({ todo, onDelete }) => {
   return (
-    <div>
-      <input
-        type="checkbox"
-        className="checkbox"
-        onChange={(e) => onSelect(todo.id, e.target.checked)}
-      />
+    <div className="todo-item">
       <span>{todo.title}</span>
+      <button onClick={() => onDelete(todo._id)}>Delete</button>
     </div>
   );
 };

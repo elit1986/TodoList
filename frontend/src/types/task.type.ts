@@ -1,4 +1,3 @@
-export type TaskType = {
-  // id: string;
+export interface TaskType {
   title: string;
-};
+}
