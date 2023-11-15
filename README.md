@@ -1,6 +1,6 @@
 # TodoList
 
-![My Image](https://github.com/yourusername/yourrepositoryname/blob/main/image.jpg)
+![TodoList](https://github.com/elit1986/TodoList/blob/main/todo.jpg)
 
 
 ## Introduction
