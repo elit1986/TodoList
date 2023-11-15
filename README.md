@@ -1,5 +1,8 @@
 # TodoList
 
+![My Image](https://github.com/yourusername/yourrepositoryname/blob/main/image.jpg)
+
+
 ## Introduction
 TodoList is a simple, yet powerful task management application designed to help you keep track of your daily tasks. It allows you to add, delete, and view tasks in a clean and intuitive interface.
 
