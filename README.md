@@ -22,9 +22,12 @@ To run this project, install it locally using npm:
 
 ```bash
 $ git clone [Your repository URL]
-$ cd TodoList
-$ npm install
-$ npm start
+$ cd TodoList/frontend
+$ npm i
+$ npm run dev
+$ cd TodoList/backend
+$ npm i
+$ npm nodemon index.js
 
 
 ## Usage
